@@ -30,7 +30,6 @@ flags.DEFINE_integer('convolutions_per_layer',2,'Number of convolutional layers 
 
 cpu = "/cpu:0"
 gpu = "/gpu:"+str(FLAGS.gpu)
-use8Band = False
 prefix = str(FLAGS.numberOfBands)+'-band'
 numberOfBands = FLAGS.numberOfBands
 maxp = 2.0**(1.0*FLAGS.precision) - 1.0
