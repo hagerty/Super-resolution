@@ -245,7 +245,7 @@ with tf.Session(config=tf.ConfigProto(log_device_placement=False)) as sess:
                 PSNReval_linear = PSNR_initial.eval(feed_dict={xy: random_subset})
                 PSNReval_cubic = PSNR_initial.eval(feed_dict={xy: random_subset_cubic})
                 print 'Optimize all previous layers:', layer,step, '\tPSNR:',PSNReval-PSNReval_cubic, PSNReval-PSNReval_linear,PSNReval,initial_PSNR, beta[layer].eval()
-                for l in range(1,layer+1):
+                for l in range(layer+1):
                     print l,beta[l].eval(),PSNR_sr[l].eval(feed_dict={xy: random_subset})
         if FLAGS.save:
             gsaver.save(sess, layer_name+str(layer))
